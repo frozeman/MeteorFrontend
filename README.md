@@ -24,6 +24,8 @@ If some grunt packages are missing, install the following ones.
 Usage
 -----
 
+to run the meteor server for development got into the `app/` folder and run `$ meteor`.
+
 Just edit your meteor files inside the `app/client/` folder and run `$ grunt` to generate the distribution package.
 This will automatically start a server at http://localhost:9000 to test you distribution package.
 
