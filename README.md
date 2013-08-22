@@ -33,6 +33,7 @@ This will automatically start a server at http://localhost:9000 to test you dist
 Deployment
 ----------
 
+You need to change the `ROOT_URL` variable in the `Gruntfile.js` and set it to the URL of your server, where you want it to deploy.
 For deployment just copy the content of the `dist/` folder onto your webserver.
 
 When you use a router you need to configure your webserver in a way that all urls get maped to the index.html file and let the router do its work (e.g. https://github.com/tmeasday/meteor-router)

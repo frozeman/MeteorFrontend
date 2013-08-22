@@ -92,11 +92,11 @@ module.exports = function (grunt) {
                         replacement: ''
                     },
                     {
-                        pattern: '##ROOT_URL_PATH_PREFIX##',
+                        pattern: '##ROOT_URL_PATH_PREFIX##/',
                         replacement: ''
                     },
                     {
-                        pattern: '##ROOT_URL_PATH_PREFIX##',
+                        pattern: '##ROOT_URL_PATH_PREFIX##/',
                         replacement: ''
                     }]
                 }
@@ -161,15 +161,15 @@ module.exports = function (grunt) {
 
     // These task will be processed:
     grunt.registerTask('build', [
-        // empties the "/bundle/" folder
+        // empties the "bundle/" folder
         'clean:bundle',
         // bundles your meteor app
         'shell:bundleMeteor',
-        // extract the bundle.tar to the "/bundle/" folder
+        // extract the bundle.tar to the "bundle/" folder
         'shell:extractMeteorBundle',
-        // cleans the "/dist/" folder and deletes the bundle.tar
+        // cleans the "dist/" folder and deletes the bundle.tar
         'clean:dist',
-        // copies all the client files to teh dist folder
+        // copies all the client files to the "dist/"" folder
         'copy',
         // renames the app.html -> index.html
         'rename',
