@@ -1,0 +1,80 @@
+{
+  "format": "javascript-image-pre1",
+  "arch": "os.linux.x86_64",
+  "load": [
+    {
+      "path": "packages/underscore.js",
+      "sourceMap": "packages/underscore.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/meteor.js",
+      "sourceMap": "packages/meteor.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/json.js",
+      "sourceMap": "packages/json.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/ejson.js",
+      "sourceMap": "packages/ejson.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/check.js",
+      "sourceMap": "packages/check.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/random.js",
+      "sourceMap": "packages/random.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/deps.js",
+      "sourceMap": "packages/deps.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/logging.js",
+      "node_modules": "npm/logging/main/node_modules",
+      "sourceMap": "packages/logging.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/ordered-dict.js",
+      "sourceMap": "packages/ordered-dict.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/minimongo.js",
+      "sourceMap": "packages/minimongo.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/livedata.js",
+      "node_modules": "npm/livedata/main/node_modules",
+      "sourceMap": "packages/livedata.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/mongo-livedata.js",
+      "node_modules": "npm/mongo-livedata/main/node_modules",
+      "sourceMap": "packages/mongo-livedata.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/ctl-helper.js",
+      "node_modules": "npm/ctl-helper/main/node_modules",
+      "sourceMap": "packages/ctl-helper.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/ctl.js",
+      "sourceMap": "packages/ctl.js.map",
+      "sourceMapRoot": "packages"
+    }
+  ]
+}
