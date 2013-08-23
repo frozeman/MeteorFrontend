@@ -3,6 +3,8 @@ Meteor Frontend
 
 This is a demo package to automatically decouple the Meteor frontend part from its backend, for solo distribution.
 
+There is also a blog post about this repo: http://frozeman.de/blog/2013/08/using-meteor-as-frontend-library/
+
 
 Installation
 ------------
