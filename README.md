@@ -66,6 +66,13 @@ minifiers
 
 Enjoy!
 
+Contributors
+------------
+
+- [Fabian Vogelsteller](https://github.com/frozeman)
+- [Mathieu Bouchard](https://github.com/matb33)
+
+
 License
 -------
 
