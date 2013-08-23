@@ -7,24 +7,17 @@ This is a demo package to automatically decouple the Meteor frontend part from i
 Installation
 ------------
 
-You need node and npm installed to run the grunt tasks
-If some grunt packages are missing, install the following ones.
+You need [node](http://nodejs.org/), npm and [grunt-cli](http://gruntjs.com/getting-started) installed.
 
-    $ npm install matchdep
-    $ npm install grunt
-    $ npm install grunt-open
-    $ npm install grunt-contrib-connect
-    $ npm install grunt-contrib-clean
-    $ npm install grunt-string-replace
-    $ npm install grunt-contrib-rename
-    $ npm install grunt-contrib-copy
-    $ npm install grunt-shell
+From the root folder of this demo package, run the following command to install the npm packages necessary to run the grunt tasks:
+
+    $ npm install
 
 
 Usage
 -----
 
-to run the meteor server for development got into the `app/` folder and run `$ meteor`.
+To run the meteor server for development go into the `app/` folder and run `$ meteor`.
 
 Just edit your meteor files inside the `app/client/` folder and run `$ grunt` to generate the distribution package.
 This will automatically start a server at http://localhost:9000 to test you distribution package.
@@ -36,9 +29,9 @@ Deployment
 You need to change the `ROOT_URL` variable in the `Gruntfile.js` and set it to the URL of your server, where you want it to deploy.
 For deployment just copy the content of the `dist/` folder onto your webserver.
 
-When you use a router you need to configure your webserver in a way that all urls get maped to the index.html file and let the router do its work (e.g. https://github.com/tmeasday/meteor-router)
+When you use a router you need to configure your webserver in a way that all urls get mapped to the index.html file and let the router do its work (e.g. https://github.com/tmeasday/meteor-router).
 
-To further slim down your meteor copy remove the 'standard-app-packages' and add back the following:
+To further slim down your meteor build, remove the 'standard-app-packages' and add back the following:
 (An easy way to do this is to edit the `.meteor/packages` file)
 
 <pre>
