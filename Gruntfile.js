@@ -161,8 +161,6 @@ module.exports = function (grunt) {
 
     // These task will be processed:
     grunt.registerTask('build', [
-        // empties the "bundle/" folder
-        'clean:bundle',
         // bundles your meteor app
         'shell:bundleMeteor',
         // extract the bundle.tar to the "bundle/" folder
@@ -173,6 +171,8 @@ module.exports = function (grunt) {
         'clean:dist',
         // copies all the client files to the "dist/"" folder
         'copy',
+        // empties the "bundle/" folder
+        'clean:bundle',
         // renames the app.html -> index.html
         'rename',
         // replaces the placeholders in the index.html with the __meteor_runtime_config__ variable
