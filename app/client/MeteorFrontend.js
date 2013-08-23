@@ -11,6 +11,9 @@ Template.hello.greeting = function () {
   return "Welcome to Meteor Frontend. Press the buttons below and check you console for output!";
 };
 
+Template.hello.data = function () {
+  return myCollection.find();
+};
 
 
 Template.hello.events({
