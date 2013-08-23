@@ -167,6 +167,8 @@ module.exports = function (grunt) {
         'shell:bundleMeteor',
         // extract the bundle.tar to the "bundle/" folder
         'shell:extractMeteorBundle',
+        // waits 200ms for certain edge cases where tar isn't quite done
+        'sleep',
         // cleans the "dist/" folder and deletes the bundle.tar
         'clean:dist',
         // copies all the client files to the "dist/"" folder
@@ -178,6 +180,10 @@ module.exports = function (grunt) {
         // starts the server to test your distribution at http://localhost:9000
         'connect:dist'
     ]);
+
+    grunt.registerTask('sleep', function () {
+        setTimeout(this.async(), 200);
+    });
 
     grunt.registerTask('default', ['build']);
 };
