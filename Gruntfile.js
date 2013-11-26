@@ -3,11 +3,16 @@ var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
 
+
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
 // use this if you want to match all subfolders:
 // 'test/spec/**/*.js'
+
+
+
+
 
 module.exports = function (grunt) {
     // load all grunt tasks
@@ -19,12 +24,14 @@ module.exports = function (grunt) {
         ROOT_URL: 'http://localhost'
     };
 
+
     // configurable paths
     var paths = {
         app: 'app',
         dist: 'dist',
         bundle: 'bundle'
     }
+
 
     grunt.initConfig({
         paths: paths,
@@ -43,11 +50,6 @@ module.exports = function (grunt) {
                     },
                     keepalive: true
                 }
-            }
-        },
-        open: {
-            server: {
-                path: 'http://localhost:<%= connect.options.port %>'
             }
         },
         clean: {
@@ -74,29 +76,31 @@ module.exports = function (grunt) {
         },
         'string-replace': {
             dist: {
-                files: {
-                    '<%= paths.dist %>/index.html': '<%= paths.dist %>/index.html'
-                },
+                files: [
+                    {
+                        nonull: true,
+                        src: ['<%= paths.bundle %>/programs/client/*.js','<%= paths.bundle %>/programs/client/*.css','<%= paths.bundle %>/programs/client/*.html'],
+                        dest: '<%= paths.bundle %>/'
+                    }
+                ],
                 options: {
                     replacements: [{
                         // SETTING THE METEOR RUNTIME VAR (NECESSARY for CLIENT ONLY)
-                        pattern: '// ##RUNTIME_CONFIG##',
-                        replacement: '    __meteor_runtime_config__ = {' + "\n" +
-'        ROOT_URL: \''+ config.ROOT_URL +'\',' + "\n" +
-'        DDP_DEFAULT_CONNECTION_URL: false,' + "\n" +
-'        DISABLE_WEBSOCKETS: true' + "\n" +
-'    };'
+                        pattern: '##RUNTIME_CONFIG##',
+                        replacement: '    <script type="text/javascript>">' + "\n" +
+'       __meteor_runtime_config__ = {' + "\n" +
+'           ROOT_URL: \''+ config.ROOT_URL +'\',' + "\n" +
+'           DDP_DEFAULT_CONNECTION_URL: false,' + "\n" +
+'           DISABLE_WEBSOCKETS: true' + "\n" +
+'       };' + "\n" +
+'    </script>'
                     },
                     {
                         pattern: '##HTML_ATTRIBUTES##',
                         replacement: ''
                     },
                     {
-                        pattern: '##ROOT_URL_PATH_PREFIX##/',
-                        replacement: ''
-                    },
-                    {
-                        pattern: '##ROOT_URL_PATH_PREFIX##/',
+                        pattern: /##ROOT_URL_PATH_PREFIX##\/*/g,
                         replacement: ''
                     }]
                 }
@@ -130,8 +134,6 @@ module.exports = function (grunt) {
                     cwd: '<%= paths.bundle %>/programs/client',
                     dest: '<%= paths.dist %>',
                     src: [
-                        // 'static_cacheable/*.*',
-                        // 'static/**/*.*',
                         '*.js',
                         '*.css',
                         '*.html'
@@ -143,11 +145,10 @@ module.exports = function (grunt) {
                     cwd: '<%= paths.bundle %>/programs/client/app',
                     dest: '<%= paths.dist %>',
                     src: [
-                        // 'static_cacheable/*.*',
-                        // 'static/**/*.*',
                         '**/*.*'
                     ]
-                }]
+                }
+                ]
             }
         },
         rename: {
@@ -163,20 +164,28 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         // bundles your meteor app
         'shell:bundleMeteor',
+
         // extract the bundle.tar to the "bundle/" folder
         'shell:extractMeteorBundle',
+
         // waits 200ms for certain edge cases where tar isn't quite done
         'sleep',
+
         // cleans the "dist/" folder and deletes the bundle.tar
         'clean:dist',
-        // copies all the client files to the "dist/"" folder
-        'copy',
-        // empties the "bundle/" folder
-        'clean:bundle',
-        // renames the app.html -> index.html
-        'rename',
+
         // replaces the placeholders in the index.html with the __meteor_runtime_config__ variable
         'string-replace',
+
+        // copies all the client files to the "dist/"" folder
+        'copy',
+        
+        // empties the "bundle/" folder
+        'clean:bundle',
+        
+        // renames the app.html -> index.html
+        'rename',
+        
         // starts the server to test your distribution at http://localhost:9000
         'connect:dist'
     ]);
