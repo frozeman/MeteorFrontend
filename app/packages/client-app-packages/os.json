@@ -17,6 +17,9 @@
       "package": "deps"
     },
     {
+      "package": "webapp"
+    },
+    {
       "package": "session"
     },
     {
