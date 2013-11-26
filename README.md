@@ -33,7 +33,7 @@ For deployment just copy the content of the `dist/` folder onto your webserver.
 
 When you use a router you need to configure your webserver in a way that all urls get mapped to the index.html file and let the router do its work (e.g. https://github.com/tmeasday/meteor-router).
 
-To further slim down your meteor build, remove the 'standard-app-packages'.
+To further slim down your meteor build, remove the `standard-app-packages`.
 
 Add
 
