@@ -35,7 +35,7 @@ When you use a router you need to configure your webserver in a way that all url
 
 To further slim down your meteor build, remove the `standard-app-packages`.
 
-Add
+Then add either
 
     $ meteor add client-app-packages
 
