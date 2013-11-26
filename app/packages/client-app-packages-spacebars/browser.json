@@ -23,6 +23,12 @@
       "package": "mongo-livedata"
     },
     {
+      "package": "spacebars"
+    },
+    {
+      "package": "ui"
+    },
+    {
       "package": "templating"
     },
     {

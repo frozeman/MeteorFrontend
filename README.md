@@ -33,40 +33,24 @@ For deployment just copy the content of the `dist/` folder onto your webserver.
 
 When you use a router you need to configure your webserver in a way that all urls get mapped to the index.html file and let the router do its work (e.g. https://github.com/tmeasday/meteor-router).
 
-To further slim down your meteor build, remove the 'standard-app-packages' and add back the following:
-(An easy way to do this is to edit the `.meteor/packages` file)
+To further slim down your meteor build, remove the 'standard-app-packages'.
 
-<pre>
-meteor
-session
-deps
-templating
-spark
-handlebars
-universal-events
-startup
-preserve-inputs
-service-configuration
-audit-argument-checks
-check
-underscore
-json
-jsparse
-liverange
-localstorage
-logging
-minimongo
-ordered-dict
-reactive-dict
-reload
-amplify
-http
-webapp
-minifiers
-</pre>
+Add
+
+    $ meteor add client-app-packages
+
+when using meteor 0.6.3,
+or when using the new render engine:
+
+    $ meteor add client-app-packages-spacebars
+
+you then also need to update your meteor app to the new render engine, so that the grunt script will use it.
+
+    $ meteor update --release template-engine-preview-5
 
 
 Enjoy!
+
 
 Contributors
 ------------

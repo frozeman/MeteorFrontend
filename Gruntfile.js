@@ -179,13 +179,13 @@ module.exports = function (grunt) {
 
         // copies all the client files to the "dist/"" folder
         'copy',
-        
+
         // empties the "bundle/" folder
         'clean:bundle',
-        
+
         // renames the app.html -> index.html
         'rename',
-        
+
         // starts the server to test your distribution at http://localhost:9000
         'connect:dist'
     ]);
