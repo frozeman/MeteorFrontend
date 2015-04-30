@@ -1,7 +1,5 @@
-UPDATE:
-This repo is probably not working anymore, because of changes made by Meteor in recent versions.
-I highly recommend using Packmeteor and commandline tool to extract only the frontend code of meteor.
-https://github.com/SpaceCapsule/packmeteor
+## UPDATE:
+To get the client part of you meteor app use my [meteor-build-client](https://github.com/frozeman/meteor-build-client) NPM package.
 
 
 Meteor Frontend
