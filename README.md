@@ -1,5 +1,6 @@
 ## UPDATE:
-To get the client part of you meteor app use my [meteor-build-client](https://github.com/frozeman/meteor-build-client) NPM package.
+
+*To get the client part of your Meteor app use my [meteor-build-client](https://github.com/frozeman/meteor-build-client) NPM package.*
 
 
 Meteor Frontend
